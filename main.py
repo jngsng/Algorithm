@@ -1,9 +1,7 @@
-def countdown(i):
-    print(i)
-    if i <= 1:
-        return
-    else:
-        countdown(i - 1)
+def sum(arr):
+  total = 0
+  for x in arr:
+    total += x
+  return total
 
-
-countdown(5)
+print(sum([1,2,3,4]))
