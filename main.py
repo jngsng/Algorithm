@@ -1,9 +1,6 @@
-book = dict()
+phone_book = {}
 
-book["apple"] = 0.67
-book["milk"] = 1.49
-book["abocado"] = 1.49
+phone_book["jenny"] = 8675309
+phone_book["emergency"] = 911
 
-print(book)
-
-print(book["abocado"])
+print(phone_book["jenny"])
