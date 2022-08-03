@@ -1,6 +1,14 @@
-phone_book = {}
+voted = {}
 
-phone_book["jenny"] = 8675309
-phone_book["emergency"] = 911
+def check_voter(name):
+  if voted.get(name):
+    print("X")
 
-print(phone_book["jenny"])
+  else:
+    voted[name] = True
+    print("Vote")
+
+
+check_voter("tom")
+check_voter("mike")
+check_voter("tom")
