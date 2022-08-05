@@ -1,14 +1,29 @@
-voted = {}
+from collections import deque
 
-def check_voter(name):
-  if voted.get(name):
-    print("X")
-
-  else:
-    voted[name] = True
-    print("Vote")
+graph = {}
+graph["you"] = ["allice", "bob", "claire", "mm"]
 
 
-check_voter("tom")
-check_voter("mike")
-check_voter("tom")
+def person_is_seller(name):
+    return (name[-1]) == 'm'
+
+
+def search_name(name):
+    search_queue = deque()
+    search_queue += graph[name]
+    searched = []
+
+    while search_queue:
+        person = search_queue.popleft()
+        if not person in searched:
+            if person_is_seller(person):
+                print(person + "is a mango sellor")
+                return True
+        else:
+            search_queue += graph[person]
+            searched.append(person)
+
+    return False
+
+
+search_name("you")
