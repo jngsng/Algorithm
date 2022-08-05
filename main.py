@@ -17,7 +17,7 @@ def search_name(name):
         person = search_queue.popleft()
         if not person in searched:
             if person_is_seller(person):
-                print(person + "is a mango sellor")
+                print(person + " is a mango seller")
                 return True
         else:
             search_queue += graph[person]
