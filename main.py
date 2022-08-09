@@ -1,10 +1,16 @@
-# 홀수 짝수 구분하기
+# MAX없이 최대값 구하기
 
-def isEven(num):
-  if(num%2 == 1):
-    print("홀수")
-  else:
-    print("짝수")
+list = [9,22,3,7,4,5]
 
-isEven(3)
-isEven(4)
+def solution(list):
+  
+  result = list[0];
+  
+  for num in list:
+    if result < num:
+      result = num
+  
+  return result
+
+# max
+print("=>",solution(list))
