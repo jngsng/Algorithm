@@ -1,16 +1,14 @@
-# MAX없이 최대값 구하기
+# 퀵 정렬 / 재귀
 
-list = [9,22,3,7,4,5]
+numbers = [40,35,27,50,75, 123, 1245, 214, 35, 436, 35]
 
-def solution(list):
-  
-  result = list[0];
-  
-  for num in list:
-    if result < num:
-      result = num
-  
-  return result
+def quickSort(array):
+  if len(array) < 2:
+    return array
+  else:
+    pibot = array[0]
+    less = [number for number in array[1:] if number <= pibot]
+    greater = [number for number in array[1:] if number >= pibot]
+    return quickSort(less) + [pibot] + quickSort(greater)
 
-# max
-print("=>",solution(list))
+print(quickSort(numbers))
