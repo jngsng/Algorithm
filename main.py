@@ -1,14 +1,12 @@
-# 퀵 정렬 / 재귀
+# 버블 정렬
 
-numbers = [40,35,27,50,75, 123, 1245, 214, 35, 436, 35]
+numbers = [7,3,2,9]
 
-def quickSort(array):
-  if len(array) < 2:
-    return array
-  else:
-    pibot = array[0]
-    less = [number for number in array[1:] if number <= pibot]
-    greater = [number for number in array[1:] if number >= pibot]
-    return quickSort(less) + [pibot] + quickSort(greater)
+for front_index in range(0,len(numbers)-1):
+  for index in range(front_index+1,len(numbers)):
+    if numbers[front_index]>numbers[index]:
 
-print(quickSort(numbers))
+      temp = numbers[front_index]
+      numbers[front_index] = numbers[index]
+      numbers[index] = temp
+    print(numbers)
