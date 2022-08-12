@@ -1,12 +1,9 @@
-# 버블 정렬
+# 재귀
 
-numbers = [7,3,2,9]
+arr = [7,3,2,9]
 
-for front_index in range(0,len(numbers)-1):
-  for index in range(front_index+1,len(numbers)):
-    if numbers[front_index]>numbers[index]:
+def sum(arr, accu):
+  if(len(arr)==0): return accu
+  return sum(arr, accu + arr.pop())
 
-      temp = numbers[front_index]
-      numbers[front_index] = numbers[index]
-      numbers[index] = temp
-    print(numbers)
+print("result =>", sum(arr,0))
