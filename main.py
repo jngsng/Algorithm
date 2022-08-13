@@ -1,9 +1,22 @@
-# 재귀
+# String Tokenizer
 
-arr = [7,3,2,9]
+string = "1+2*(3-4)"
 
-def sum(arr, accu):
-  if(len(arr)==0): return accu
-  return sum(arr, accu + arr.pop())
 
-print("result =>", sum(arr,0))
+def stringTokenizer(string):
+    result = []
+    accu = ""
+
+    for char in string:
+        if char in "+-*/(){}[]^":
+            if accu != "":
+                result.append(char)
+                accu = ""
+            result.append(char)
+        else:
+            accu = accu + char
+    return result
+
+
+result = stringTokenizer(string)
+print(result)
