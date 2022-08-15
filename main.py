@@ -1,22 +1,16 @@
-# String Tokenizer
-
-string = "1+2*(3-4)"
+word = "test"
 
 
-def stringTokenizer(string):
-    result = []
-    accu = ""
+def letter_count(word):
+  map = {}
+  for alphabet in word:
+    if map.get(alphabet) == None:
+      map[alphabet] = 1
+    else:
+      map[alphabet] += 1
 
-    for char in string:
-        if char in "+-*/(){}[]^":
-            if accu != "":
-                result.append(char)
-                accu = ""
-            result.append(char)
-        else:
-            accu = accu + char
-    return result
+      print("map => ", map)
+  return -1
 
 
-result = stringTokenizer(string)
-print(result)
+print(letter_count(word))
