@@ -1,21 +1,11 @@
-word = "qweklbrwklbfklsdanflnasdfklasdfnklasdnflk"
+# 단순탐색
 
+arr = [1,2,3,4,5,6,7,8,9,10]
 
-def letter_count(word):
-  map = {}
-  most = {}
-  for alphabet in word:
-    if map.get(alphabet) == None:
-      map[alphabet] = 1
-    else:
-      map[alphabet] += 1
+def SimpleSearch(arr, targetNum):
+  for index in range(0, len(arr)):
+    if arr[index] == targetNum:
+      return index
+  return -1
 
-  max = -1
-  for key in map:
-    if map[key] > max:
-      max = map[key]
-      
-  return max
-
-
-print(letter_count(word))
+print(SimpleSearch(arr,8))
