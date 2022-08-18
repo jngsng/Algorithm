@@ -1,11 +1,19 @@
-# 단순탐색
+# 이진탐색
+# 정렬필요
 
-arr = [1,2,3,4,5,6,7,8,9,10]
+arr = [1,2,3,4,5,6,7,8,9,10,11,12]
 
-def SimpleSearch(arr, targetNum):
-  for index in range(0, len(arr)):
-    if arr[index] == targetNum:
-      return index
+def binarySearch(arr,targetNum):
+  start = 0
+  end = len(arr) - 1
+  midIndex = len(arr)//2
+  indexValue = arr[midIndex]
+  if indexValue == targetNum:
+    return midIndex
+  elif indexValue < targetNum:
+    start = midIndex + 1
+  elif indexValue > targetNum:
+    end = midIndex -1
   return -1
 
-print(SimpleSearch(arr,8))
+print(binarySearch(arr,2))
