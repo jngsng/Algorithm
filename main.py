@@ -1,8 +1,19 @@
-# 피보나치 / 재귀
+# 피보나치
 
-def fib(n):
-  if n <=1:
-    return n
-  return fib(n-1) + fib(n-2)
+def fibo(num):
+  result = []
+  first = 1
+  second = 1
 
-print(fib(8))
+  if(num > 1):
+    result.append(first)
+  result.append(second)
+  for i in range(2,num):
+    third = first + second
+    result.append(third)
+    first = second
+    second = third
+
+  return result
+
+print(fibo(12))
